@@ -6,9 +6,13 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 const Hero = () => {
   return (
     <div id="home" className='hero'>
-      <img src={profile_img} alt="" />
-      <h1><span>I am Alex Bennett</span>,frontend Developer based in USA</h1>
-      <p>I am a frontend developer from California,USA with 10 years of experience</p>
+      <h1>
+        <span>I am Jefferson Waithaka</span>
+        <br />
+        Advocate of the High Court of Kenya
+      </h1>
+      <p>Passionate about justice Law and Order</p>
+      
       <div className="hero-action">
         <div className='hero-connect'>
           <AnchorLink  className='anchor-link' offset={50} href='#contact'>

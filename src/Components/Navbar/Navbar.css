@@ -4,6 +4,12 @@
     justify-content: space-between;
     margin: 20px 17px;
 }
+.logo{
+    transform: rotate(90deg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
 .nav-menu{
     display: flex;
     align-items: center;
@@ -17,7 +23,8 @@
     font-size: 22px;
     cursor: pointer;
     transition: 0.5s;
-    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 100%);
+   background: linear-gradient(267deg, #FFD700 10%, #6A0DAD 100%);
+
 }
 .nav-connect:hover{
     transform: scale(1.05);
