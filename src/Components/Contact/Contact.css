@@ -4,7 +4,8 @@
     align-items: center;
     justify-content: center;
     gap:80px;
-    margin: 80px 170px;
+    padding-left: 100px;
+    /* margin: 80px 170px; */
 }
 .contact-title{
     position: relative;

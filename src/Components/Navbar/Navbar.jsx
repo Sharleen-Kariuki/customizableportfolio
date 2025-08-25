@@ -1,5 +1,5 @@
 import './Navbar.css'
-import logo from '../../assets/portfolio_img.jpeg'
+import logo from '../../assets/logo.png'
 import { useRef, useState } from 'react'
 import underline from '../../assets/nav_underline.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
