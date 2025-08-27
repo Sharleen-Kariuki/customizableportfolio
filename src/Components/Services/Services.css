@@ -102,3 +102,37 @@
         gap: 30px;
     }
 }
+@media (max-width: 480px) {
+    .services {
+        align-items: center;
+        /* gap: 50px; */
+        margin: 10px 20px;
+    }
+    .services-title h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+    .services-title img {
+        width: 100px;
+        margin-right: 0;
+    }
+    .services-format {
+        gap: 15px;
+        padding: 20px;
+    }
+    .services-format h2 {
+        font-size: 24px;
+    }
+    .services-format p {
+        font-size: 14px;
+        line-height: 24px;
+        max-width: 100%;
+    }
+    .services-readmore img {
+        width: 16px;
+    }
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

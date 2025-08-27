@@ -1,9 +1,9 @@
 import React from 'react'
 import './Contact.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
-import mail_icon from '../../assets/mail_icon.svg'
-import location_icon from '../../assets/location_icon.svg'
-import call_icon from '../../assets/call_icon.svg'
+// import mail_icon from '../../assets/mail_icon.svg'
+// import location_icon from '../../assets/location_icon.svg'
+// import call_icon from '../../assets/call_icon.svg'
 
 const Contact = () => {
 
@@ -41,7 +41,7 @@ const Contact = () => {
             <img src={theme_pattern} alt="" />
         </div>
         <div className="contact-section">
-            <div className="contact-left">
+            {/* <div className="contact-left">
                 <h1>Let's talk</h1>
                 <p>Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.</p>
                 <div className="contact-details">
@@ -59,7 +59,7 @@ const Contact = () => {
                         
                     </div>
                 </div>
-            </div>
+            </div> */}
             <form onSubmit={onSubmit} className='contact-right'>
                 <input type="hidden" name="access_key" value="e996af56-fbbd-406e-94b0-a442b3434a"></input>
                 <label htmlFor="">Your Name</label>
@@ -67,7 +67,7 @@ const Contact = () => {
                 <label htmlFor="">Your Email</label>
                 <input type="email" placeholder='Enter your email' name='email' />
                 <label htmlFor="">Your Message</label>
-                <textarea name="message" rows="8" placeholder='Enter your message'></textarea>   
+                <textarea name="message" rows="4" placeholder='Enter your message'></textarea>   
                 <button type='submit' className="contact-submit">Submit now</button>
             </form>
              <span>{result}</span>
