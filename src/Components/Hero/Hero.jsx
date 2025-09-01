@@ -10,7 +10,7 @@ const Hero = () => {
         <br />
         Advocate of the High Court of Kenya
       </h1>
-      <p>Passionate about justice Law and Order</p>
+      <p>Passionate about Justice, Law and Order</p>
       
       <div className="hero-action">
         <div className='hero-connect'>
