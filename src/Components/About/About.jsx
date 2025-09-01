@@ -16,7 +16,7 @@ const About = () => {
         </div>
         <div className="about-right">
             <div className="about-para">
-                <p>Jefferson Waithaka is an Advocate of the High Court of Kenya with expertise in Conveyancing and Real Estate Transactions, Commercial Law, Banking, Data Protection Laws, and Cybersecurity Laws. He has advised individuals, corporations, and institutions on complex legal matters, consistently delivering practical and strategic solutions.</p>
+                <p>Jefferson Waithaka is an Advocate of the High Court of Kenya with expertise in inter alia: Conveyancing and Real Estate Transactions, Commercial Law, Banking, Data Protection Laws, and Cybersecurity Laws. He has advised individuals, corporations, and institutions on complex legal matters, consistently delivering practical and strategic solutions.</p>
                 <p>With a background in real estate, banking, and commercial transactions, he combines legal knowledge with business insight to safeguard client interests. His experience enables him to handle both routine and complex matters with precision and efficiency.</p>
                 <p>Known for his professionalism, integrity, and results-driven approach, Jefferson is committed to providing dependable legal support that empowers clients to make informed decisions with confidence.</p>
             </div>
