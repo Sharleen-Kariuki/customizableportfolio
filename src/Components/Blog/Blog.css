@@ -22,7 +22,7 @@
 }
 .blog-format{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     gap: 20px;
     padding: 60px;
@@ -35,7 +35,7 @@
    
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
+    gap: 70px;
     margin-bottom: 80px;
 }
 .blog-format h3{
@@ -63,41 +63,121 @@
     transform:scale(1.05);
     transition: 0.4s;
 }
-@media (max-width: 768px) {
-    .blog{
+.blog-flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px; /* Perspective for the 3D effect */
+    /* gap: 40px; */
+  }
+  
+  .blog-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .blog-flip-card:hover .blog-flip-card-inner {
+    transform: rotateY(180deg); /* Flip the card on hover */
+  }
+  
+  .blog-flip-card-front,
+  .blog-flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back side when not flipped */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 10px;
+  }
+  
+  .blog-flip-card-front {
+    /* background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%); */
+    background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .blog-flip-card-back {
+    background: #323238;
+    color: #d4d4d4;
+    transform: rotateY(180deg); /* Position the back side */
+  }
+  @media (max-width: 768px) {
+    .blog {
         align-items: start;
         gap: 70px;
         margin: 20px 70px;
     }
+
     .blog-title h1 {
         padding: 0;
         font-size: 50px;
     }
+
     .blog-title img {
         width: 130px;
         margin-right: -20px;
-       
     }
-    .blog-format{
-        gap:20px;
+
+    .blog-format {
+        gap: 20px;
         padding: 32px;
     }
+
     .blog-format h2 {
         font-size: 28px;
     }
-    .blog-format p{
+
+    .blog-format p {
         font-size: 18px;
         line-height: 32px;
         max-width: 300px;
     }
-    .blog-container{
-        display:flex;
+
+    .blog-container {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 40px;
         padding: 20px;
     }
+
+    /* Flip card styles for 768px */
+    .blog-flip-card {
+        width: 250px; /* Adjust card width */
+        height: 180px; /* Adjust card height */
+    }
+
+    .blog-flip-card-front,
+    .blog-flip-card-back {
+        padding: 15px; /* Adjust padding */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .blog-flip-card-front h3 {
+        font-size: 20px; /* Adjust heading size */
+    }
+
+    .blog-flip-card-front h2 {
+        font-size: 22px; /* Adjust subheading size */
+    }
+
+    .blog-flip-card-back p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
 }
+
 @media (max-width: 480px) {
     .blog {
         align-items: center;
@@ -132,10 +212,34 @@
     }
 
     .blog-container {
-        display:flex;
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 40px;
-        padding: 20px;
+        gap: 20px; /* Reduce gap between cards */
+        padding: 10px; /* Reduce padding */
+    }
+
+    /* Flip card styles for 480px */
+    .blog-flip-card {
+        width: 200px; /* Adjust card width */
+        height: 150px; /* Adjust card height */
+    }
+
+    .blog-flip-card-front,
+    .blog-flip-card-back {
+        padding: 10px; /* Adjust padding */
+        font-size: 12px; /* Adjust font size */
+    }
+
+    .blog-flip-card-front h3 {
+        font-size: 18px; /* Adjust heading size */
+    }
+
+    .blog-flip-card-front h2 {
+        font-size: 20px; /* Adjust subheading size */
+    }
+
+    .blog-flip-card-back p {
+        font-size: 12px; /* Adjust paragraph size */
     }
 }
