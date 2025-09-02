@@ -18,7 +18,12 @@ const Hero = () => {
           Connect with Me
           </AnchorLink>
           </div>
-        <div className='hero-resume'>My Resume</div>
+        <div 
+          className='hero-resume'
+          onClick={() => window.open('https://www.linkedin.com/in/jefferson-waithaka-056059180', '_blank')}
+        >
+          My Resume
+        </div>
       </div>
     </div>
   )

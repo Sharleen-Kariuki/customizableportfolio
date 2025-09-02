@@ -96,13 +96,48 @@
     background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
     font-size: 22px;
     padding: 20px 60px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     cursor: pointer;
     transition: 0.3s;
 }
-.contact-submit:hover{
+
+.contact-submit:hover:not(:disabled){
     transform: scale(1.1);
     transition: 0.3s;
+}
+
+.contact-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Result message styles */
+.result-message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.result-message.success {
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #22c55e;
+}
+
+.result-message.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 768px) {
     .contact{

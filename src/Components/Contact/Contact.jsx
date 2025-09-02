@@ -6,33 +6,47 @@ import theme_pattern from '../../assets/theme_pattern.svg'
 // import call_icon from '../../assets/call_icon.svg'
 
 const Contact = () => {
-
     const [result, setResult] = React.useState("");
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setIsSubmitting(true);
+        setResult("Sending...");
+        
+        const formData = new FormData(event.target);
+        
+        // Web3Forms access key for JJWaithakalaw@gmail.com
+        formData.append("access_key", "be4f913a-dba2-496e-93b8-d57f4b5779c3");
+        
+        // Add additional fields for better email organization
+        formData.append("subject", "New Contact Form Submission from Portfolio");
+        formData.append("from_name", formData.get("name"));
 
-    formData.append("access_key", "e996af56-fbbd-406e-94b0-a442b3434a");
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      mode: 'no-cors',
-        method: "POST",
-      body: formData
-    });
+            const data = await response.json();
 
-    const data = await response.json();
-
-    if (data.success) {
-        alert("Form Submitted Successfully");
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
-  };
+            if (data.success) {
+                setResult("✅ Message sent successfully! I'll get back to you soon.");
+                event.target.reset();
+            } else {
+                console.log("Error", data);
+                setResult("❌ Failed to send message. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            setResult("❌ Network error. Please check your connection and try again.");
+        } finally {
+            setIsSubmitting(false);
+            // Clear the result message after 5 seconds
+            setTimeout(() => setResult(""), 5000);
+        }
+    };
 
   return (
     <div id="contact" className='contact'>
@@ -61,16 +75,57 @@ const Contact = () => {
                 </div>
             </div> */}
             <form onSubmit={onSubmit} className='contact-right'>
-                <input type="hidden" name="access_key" value="e996af56-fbbd-406e-94b0-a442b3434a"></input>
-                <label htmlFor="">Your Name</label>
-                <input type="text" placeholder='Enter your name' name='name' />
-                <label htmlFor="">Your Email</label>
-                <input type="email" placeholder='Enter your email' name='email' />
-                <label htmlFor="">Your Message</label>
-                <textarea name="message" rows="4" placeholder='Enter your message'></textarea>   
-                <button type='submit' className="contact-submit">Submit now</button>
+                <input type="hidden" name="access_key" value="be4f913a-dba2-496e-93b8-d57f4b5779c3" />
+                
+                <label htmlFor="name">Your Name *</label>
+                <input 
+                    type="text" 
+                    placeholder='Enter your name' 
+                    name='name' 
+                    id='name'
+                    required 
+                />
+                
+                <label htmlFor="email">Your Email *</label>
+                <input 
+                    type="email" 
+                    placeholder='Enter your email' 
+                    name='email' 
+                    id='email'
+                    required 
+                />
+                
+                <label htmlFor="phone">Phone Number (Optional)</label>
+                <input 
+                    type="tel" 
+                    placeholder='Enter your phone number' 
+                    name='phone' 
+                    id='phone'
+                />
+                
+                <label htmlFor="message">Your Message *</label>
+                <textarea 
+                    name="message" 
+                    id="message"
+                    rows="4" 
+                    placeholder='Enter your message'
+                    required
+                ></textarea>   
+                
+                <button 
+                    type='submit' 
+                    className="contact-submit"
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting ? 'Sending...' : 'Submit now'}
+                </button>
+                
+                {result && (
+                    <div className={`result-message ${result.includes('✅') ? 'success' : 'error'}`}>
+                        {result}
+                    </div>
+                )}
             </form>
-             <span>{result}</span>
         </div>
     </div>
   )

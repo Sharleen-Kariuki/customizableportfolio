@@ -7,6 +7,7 @@ import Services from './Components/Services/Services'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
 import Blog from './Components/Blog/Blog'
+import WhatsAppButton from './Components/WhatsAppButton/WhatsAppButton'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Blog/>
       <Contact />
       <Footer/>
+      <WhatsAppButton />
     </div>
   )
 }
