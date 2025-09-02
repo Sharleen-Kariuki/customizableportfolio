@@ -13,15 +13,15 @@ const Footer = () => {
         <div className="contact-details">
           <div className="contact-detail">
             <img src={mail_icon} alt="" />
-            <p>greatstackdev@gmail.com</p>
+            <p>JJWaithakalaw@gmail.com</p>
           </div>
           <div className="contact-detail">
             <img src={location_icon} alt="" />
-            <p>The Parklands</p>
+            <p>Ruiru, Kiambu County</p>
           </div>
           <div className="contact-detail">
             <img src={call_icon} alt="" />
-            <p>0723413013</p>
+            <p>0717254878</p>
           </div>
         </div>
       </div>
