@@ -28,12 +28,13 @@ const Footer = () => {
 
       <hr />
       <div className="footer-bottom">
-        <p className="footer-bottom-left">Copyright</p>
-        <div className="footer-bottom-right">
-            <p>Terms of Services</p>
-            <p>Privacy Policy</p>
-            <p>Connect with me</p>
-        </div>
+        {/* <p className="footer-bottom-left"></p> */}
+        {/* <div className="footer-bottom-right"> */}
+            {/* <p>Terms of Services</p>
+            <p>Privacy Policy</p> */}
+            {/* <p>John Jefferson Waithaka</p>
+        </div> */}
+        <p>John Jefferson Waithaka</p>
       </div>
       
     </div>

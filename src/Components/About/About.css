@@ -25,10 +25,12 @@
     gap: 80px;
 }
 .about-left img{
-       transform: rotate(90deg);
-       width: 300px;
-       height: 300px;
-       border-radius: 30px;
+    margin: 90px;
+    width: 100%;
+    height: auto;
+    transform: scale(6.6);
+    transform: rotate(90deg);
+    border-radius: 30px;
 }
 .about-right{
     display: flex;

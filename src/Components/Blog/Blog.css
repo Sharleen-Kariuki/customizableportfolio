@@ -32,6 +32,7 @@
     cursor: pointer;
 }
 .blog-container{
+   
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
@@ -90,8 +91,11 @@
         max-width: 300px;
     }
     .blog-container{
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding: 20px;
     }
 }
 @media (max-width: 480px) {
@@ -128,7 +132,10 @@
     }
 
     .blog-container {
-        grid-template-columns: 1fr; /* Single column layout */
-        gap: 20px; /* Reduce gap between items */
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding: 20px;
     }
 }
