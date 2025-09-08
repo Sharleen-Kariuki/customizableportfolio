@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Jefferson Waithaka - Business Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .business-card {
+            width: 350px;
+            height: 200px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-sizing: border-box;
+            color: white;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #DF8908, #B415FF);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .qr-code {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 8px;
+            padding: 5px;
+            margin-bottom: 8px;
+        }
+
+        .qr-text {
+            font-size: 10px;
+            color: #cccccc;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: 400;
+            color: #DF8908;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #cccccc;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            fill: #DF8908;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #DF8908, #B415FF);
+            border-radius: 2px;
+            margin: 15px 0;
+        }
+
+        /* Print styles for actual business card printing */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            
+            .business-card {
+                width: 3.5in;
+                height: 2in;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Back of card design */
+        .card-back {
+            width: 350px;
+            height: 200px;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-sizing: border-box;
+            color: white;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-left: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card-back::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #B415FF, #DF8908);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .logo-area {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-text {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #DF8908, #B415FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: #cccccc;
+            font-weight: 300;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+        <!-- Front of Business Card -->
+        <div class="business-card">
+            <div class="card-content">
+                <div class="header">
+                    <h1 class="name">John Jefferson Waithaka</h1>
+                    <p class="title">Legal Advocate</p>
+                    <div class="accent-line"></div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <span>+254 717 254 878</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <span>JJWaithakalaw@gmail.com</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span>Ruiru, Kiambu County</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <div class="qr-code">
+                    <div id="qrcode"></div>
+                </div>
+                <div class="qr-text">Scan for Website</div>
+            </div>
+        </div>
+
+        <!-- Back of Business Card -->
+        <div class="card-back">
+            <div class="logo-area">
+                <div class="logo-text">JJW</div>
+                <div class="tagline">Professional Legal Services</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script>
+        // Generate QR Code for your website
+        // Update this URL to match your actual website URL when deployed
+        const websiteUrl = 'http://localhost:5174'; // Change this to your deployed website URL
+        
+        QRCode.toCanvas(document.getElementById('qrcode'), websiteUrl, {
+            width: 60,
+            height: 60,
+            color: {
+                dark: '#000000',
+                light: '#FFFFFF'
+            },
+            margin: 1,
+            errorCorrectionLevel: 'M'
+        }, function (error) {
+            if (error) {
+                console.error(error);
+                // Fallback if QR code fails to generate
+                document.getElementById('qrcode').innerHTML = '<div style="font-size: 8px; text-align: center; padding: 20px; color: #666;">QR<br>CODE</div>';
+            }
+        });
+    </script>
+</body>
+</html>
